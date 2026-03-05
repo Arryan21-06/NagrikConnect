@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-
+import {Link} from "react-router-dom";
 // ── Brand tokens ──────────────────────────────────────────────
 const C = {
   saffron: "#e8621a",
@@ -121,6 +121,7 @@ function Navbar({ onPortalClick }) {
       <div className="hidden md:flex items-center gap-6">
         <a href="#features" className="text-sm font-medium transition-colors hover:opacity-70" style={{ color: C.ink, textDecoration: "none" }}>Features</a>
         <a href="#how"      className="text-sm font-medium transition-colors hover:opacity-70" style={{ color: C.ink, textDecoration: "none" }}>How It Works</a>
+        <Link to="/login">
         <button
           onClick={onPortalClick}
           className="text-sm font-bold px-4 py-2 rounded-lg transition-all"
@@ -129,7 +130,7 @@ function Navbar({ onPortalClick }) {
           onMouseLeave={e => { e.currentTarget.style.background = C.ink; }}
         >
           File a Complaint →
-        </button>
+        </button></Link>
       </div>
     </nav>
   );
@@ -173,6 +174,7 @@ function Hero({ onPortalClick }) {
           NagrikConnect converts unstructured citizen input — voice, text, image — into verified, routed, and trackable governance actions. No forms. No jargon. No barriers.
         </p>
         <div className="flex flex-wrap gap-4">
+          <Link to="/login">
           <button
             onClick={onPortalClick}
             className="px-7 py-3.5 rounded-lg font-bold text-white text-base transition-all"
@@ -182,6 +184,7 @@ function Hero({ onPortalClick }) {
           >
             File a Complaint →
           </button>
+          </Link>
           <a
             href="#features"
             className="px-7 py-3.5 rounded-lg font-bold text-base transition-all"
